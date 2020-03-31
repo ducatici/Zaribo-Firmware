@@ -224,11 +224,11 @@ for TYPE in ${BMQArray[@]}; do
 	done
 	echo
 done
-echo "End BMQH"
+echo "End BMH"
 
 BASE_MOD=BM
 MOD="BMM" ##Bondtech Prusa Mosquito Magnum Edition for MK2.5S and MK3S
-declare -a BMGOArray=( "MK3S")
+#declare -a BMGOArray=( "MK3S")
 for TYPE in ${BMGOArray[@]}; do
 	echo "Type: $TYPE Base_MOD: $BASE_MOD MOD: $MOD"
 	if [[ "$TYPE" == "MK3" || "$TYPE" == "MK3S" ]]; then
@@ -261,11 +261,13 @@ done
 
 BASE_MOD=BMM
 MOD="BMMH" ##Bondtech Prusa Mosquito Magnum Edition with Slice High Temperature Thermistor
-declare -a BMGOArray=( "MK3S")
+#declare -a BMGOArray=( "MK3S")
 for TYPE in ${BMGOArray[@]}; do
 	echo "Type: $TYPE Base_MOD: $BASE_MOD MOD: $MOD"
 	if [ "$TYPE" == "MK3S" ]; then
 		BOARD="EINSy10a"
+	elif [[ $TYPE == "MK25" || $TYPE == "MK25S" ]]; then
+		BOARD="RAMBo13a"
 	else
 		echo "Unsupported controller"
 		exit 1
@@ -287,4 +289,5 @@ for TYPE in ${BMGOArray[@]}; do
 	done
 	echo
 done
+echo "End BMMH"
 
